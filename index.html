@@ -29,7 +29,9 @@
             WEB<span class="logo-word-header">STUDIO</span></a
           >
           <ul class="menu list">
-            <li><a class="menu-link link" href="./index.html">Studio</a></li>
+            <li>
+              <a class="menu-link link current" href="./index.html">Studio</a>
+            </li>
             <li>
               <a class="menu-link link" href="./portfolio.html">Portfolio</a>
             </li>
@@ -58,7 +60,9 @@
       <section class="hero-section">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="modal-btn" type="button">Order Service</button>
+          <button class="modal-btn" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!--Реклама компании, завлечение-->
@@ -445,5 +449,13 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-window-btn-close" type="button" data-modal-close>
+          X
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
