@@ -46,6 +46,14 @@ ul {
 img {
   display: block;
 }
+@keyframes rotator {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1080deg);
+  }
+}
 .nav {
   display: flex;
   align-items: center;
@@ -159,6 +167,7 @@ ul.menu {
   text-align: center;
 }
 .modal-btn {
+  border: none;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -173,8 +182,13 @@ ul.menu {
   height: 56px;
   margin-top: 48px;
   border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -320,6 +334,7 @@ ul.menu {
   margin-left: 120px;
 }
 .footer-paragraph {
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--footer-text-color);
@@ -379,17 +394,18 @@ ul.menu {
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: color;
 
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: box-shadow;
 
+  transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-button:hover,
 .portfolio-button:focus {
+  border: none;
   background-color: var(--accent-color);
   color: var(--third-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
@@ -412,11 +428,43 @@ ul.menu {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.article-box-content {
+  position: relative;
+  overflow: hidden;
+}
+.article-card-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #4d5ae5;
+  pointer-events: none;
+  opacity: 0.95;
+  transform: translateY(100%);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.article-card-text {
+  color: #f4f4fd;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
 .img-list-item:hover,
 .img-list-item:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   cursor: pointer;
+}
+.img-list-item:hover .article-card-animation {
+  transform: translateY(0);
+}
+.img-list-item:focus .article-card-animation {
 }
 .img-list-title {
   font-weight: 500;
@@ -445,6 +493,10 @@ ul.menu {
   bottom: 0;
   right: 0;
   background-color: rgba(46, 47, 66, 0.4);
+
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
   opacity: 0;
@@ -458,13 +510,22 @@ ul.menu {
   min-width: 408px;
   min-height: 576px;
   background-color: rgba(252, 252, 252, 1);
+
+  animation-name: rotator;
+  animation-duration: 2000ms;
+  animation-direction: alternate;
 }
-.modal-window-btn-close {
+.modal-btn-close {
   position: fixed;
   top: 0;
   right: 0;
   margin: 32px;
-  width: 24px;
-  height: 24px;
   cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #e7e9fc;
+}
+.icon-close-btn-black-x {
+  width: 8px;
+  height: 8px;
 }
