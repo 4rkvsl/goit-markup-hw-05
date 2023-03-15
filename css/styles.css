@@ -187,10 +187,6 @@ ul.menu {
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover,
 .modal-btn:focus {
@@ -308,6 +304,10 @@ ul.menu {
   border: 1px solid #8e8f99;
   align-items: center;
   justify-content: center;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-item:hover,
 .customers-item:focus {
@@ -317,6 +317,10 @@ ul.menu {
   width: 104px;
   height: 56px;
   fill: #8e8f99;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-item:hover .customers-icons,
 .customers-item:focus .customers-icons {
@@ -391,21 +395,12 @@ ul.menu {
   cursor: pointer;
   padding: 12px 24px;
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-  transition-property: box-shadow;
+  transition-property: box-shadow, background-color, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-button:hover,
 .portfolio-button:focus {
-  border: none;
   background-color: var(--accent-color);
   color: var(--third-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
@@ -506,6 +501,7 @@ ul.menu {
   position: absolute;
   top: 50%;
   left: 50%;
+  border-radius: 4px;
   transform: translate(-50%, -50%);
   min-width: 408px;
   min-height: 576px;
@@ -516,16 +512,37 @@ ul.menu {
   animation-direction: alternate;
 }
 .modal-btn-close {
-  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
   top: 0;
   right: 0;
+  width: 24px;
+  height: 24px;
   margin: 32px;
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn-close:hover,
+.modal-btn-close:focus {
+  background-color: var(--accent-color);
+}
+.modal-btn-close:hover .icon-close-btn-black-x,
+.modal-btn-close:focus .icon-close-btn-black-x {
+  fill: #ffffff;
 }
 .icon-close-btn-black-x {
   width: 8px;
   height: 8px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
